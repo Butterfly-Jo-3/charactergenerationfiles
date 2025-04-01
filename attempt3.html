@@ -19,15 +19,23 @@ document.getElementById("flawsbtn").addEventListener("click", function () {
     fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/flaws.json?nocache=" + new Date().getTime())
         .then(response => response.json())
         .then(data => {
-            // Select a random entry from the array
-            const randomFlawObject = data[Math.floor(Math.random() * data.length)];
+            // Debug: Log the data to see its structure
+            console.log(data);
 
-            // Extract the flaw and explanation (key and value)
-            const flaw = Object.keys(randomFlawObject)[0];  // The flaw is the key
-            const explanation = randomFlawObject[flaw];  // The explanation is the value
+            // Check if the data is an array and contains elements
+            if (Array.isArray(data) && data.length > 0) {
+                // Select a random flaw object from the array
+                const randomFlawObject = data[Math.floor(Math.random() * data.length)];
 
-            // Display both the flaw and the explanation in the text box
-            document.getElementById("flawstxt").value = `${flaw}: ${explanation}`;
+                // Extract the flaw (key) and explanation (value)
+                const flaw = Object.keys(randomFlawObject)[0];  // The flaw is the key
+                const explanation = randomFlawObject[flaw];  // The explanation is the value
+
+                // Display both the flaw and the explanation in the text box
+                document.getElementById("flawstxt").value = `${flaw}: ${explanation}`;
+            } else {
+                console.error("Data is not in the expected array format or is empty.");
+            }
         })
         .catch(error => console.error("Error loading JSON:", error));
 });
