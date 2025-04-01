@@ -19,8 +19,10 @@ document.getElementById("flawsbtn").addEventListener("click", function () {
     fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/flaws.json?nocache=" + new Date().getTime())
         .then(response => response.json())
         .then(data => {
-            const randomFlaw = data[Math.floor(Math.random() * data.length)].flaw; // Accessing "flaw" property
-            document.getElementById("flawstxt").value = randomFlaw;
+            const flawsArray = data.Sheet1;  // Access "Sheet1" array
+            const randomFlaw = flawsArray[Math.floor(Math.random() * flawsArray.length)];  // Random object from array
+            const flawKey = Object.keys(randomFlaw)[0];  // Get the key (flaw) of the object
+            document.getElementById("flawstxt").value = flawKey;  // Display flaw in text box
         })
         .catch(error => console.error("Error loading JSON:", error));
 });
