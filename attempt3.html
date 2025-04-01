@@ -13,34 +13,29 @@
 		<button id="flawsbtn" class="btn btn-primary">Get a Random Flaw</button>
 		<input type="text" id="flawstxt" class="form-control mt-2" readonly>
 	</div>
+	<script>
+	document.getElementById("flawsbtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/flaws.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+				// Debug: Log the data to see its structure
+				console.log(data);
 
-    <script>
-document.getElementById("flawsbtn").addEventListener("click", function () {
-    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/flaws.json?nocache=" + new Date().getTime())
-        .then(response => response.json())
-        .then(data => {
-            // Debug: Log the data to see its structure
-            console.log(data);
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random flaw from the array
+					const randomFlaw = data[Math.floor(Math.random() * data.length)];
 
-            // Check if the data is an array and contains elements
-            if (Array.isArray(data) && data.length > 0) {
-                // Select a random flaw object from the array
-                const randomFlawObject = data[Math.floor(Math.random() * data.length)];
+					// Display the random flaw in the text box
+					document.getElementById("flawstxt").value = randomFlaw;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
 
-                // Extract the flaw (key) and explanation (value)
-                const flaw = Object.keys(randomFlawObject)[0];  // The flaw is the key
-                const explanation = randomFlawObject[flaw];  // The explanation is the value
-
-                // Display both the flaw and the explanation in the text box
-                document.getElementById("flawstxt").value = `${flaw}: ${explanation}`;
-            } else {
-                console.error("Data is not in the expected array format or is empty.");
-            }
-        })
-        .catch(error => console.error("Error loading JSON:", error));
-});
-
-    </script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
   
