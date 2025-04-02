@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Character Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+	<nav class="navbar navbar-expand bg-dark">
+		<div class="container-fluid">
+			<a class="display-6 text-white " href="#">Character Generator</a>
+			
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<p class="nav-link center text-white h4">My links ---></p>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="https://twitch.tv/butterfly_jo_" target="_blank">Twitch</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" href="https://x.com/Butterfly_Jo_33" target="_blank">Twitter</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--Gap in the code so I can read it easier -->
+	
+    <h1>Hello, world!</h1>
+
+	<!-- -->
+	<div class="container-fluid mt-5">
+		<div class="d-flex">
+			<button id="personalitybtn" class="btn btn-secondary me-2">Personality Trait</button>
+			<textarea type="text" id="personalitytxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+		</div>
+	</div>
+	<!-- -->	
+	<div class="container-fluid mt-5">
+		<div class="d-flex">
+			<button id="idealbtn" class="btn btn-secondary me-2">Ideal</button>
+			<textarea type="text" id="idealtxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+		</div>
+	</div>
+	<!-- -->
+	<div class="container-fluid mt-5">
+		<div class="d-flex">
+			<button id="bondbtn" class="btn btn-secondary me-2">Bond</button>
+			<textarea type="text" id="bondtxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+		</div>
+	</div>
+	<!-- -->
+	<div class="container-fluid mt-5">
+		<div class="d-flex">
+			<button id="flawsbtn" class="btn btn-secondary me-2">Flaw</button>
+			<textarea type="text" id="flawstxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+		</div>
+	</div>
+
+	<!--AAAAAAAAAAA I hate scripts -->
+	<script> <!--PERSONALITY TRAITS -->
+	document.getElementById("personalitybtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/personalitytraits.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random ideal from the array
+					const randomBond = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random bond in the text box
+					document.getElementById("personalitytxt").value = `"${randomBond}"`;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
+		
+	<script> <!--IDEALS -->
+	document.getElementById("idealbtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/ideals.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random ideal from the array
+					const randomBond = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random bond in the text box
+					document.getElementById("idealtxt").value = `"${randomBond}"`;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
+	
+	<script> <!--BONDS -->
+	document.getElementById("bondbtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/bonds.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random flaw from the array
+					const randomBond = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random bond in the text box
+					document.getElementById("bondtxt").value = `"${randomBond}"`;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
+	
+	<script> <!--FLAWS -->
+	document.getElementById("flawsbtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/flaws.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random flaw from the array
+					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random flaw in the text box
+					document.getElementById("flawstxt").value = randomFlaw;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	
+	
+	<script>function autoResize(textarea) {
+    textarea.style.height = 'auto'; // Reset height to auto before calculating the new height
+    textarea.style.height = (textarea.scrollHeight) + 'px'; // Adjust to content height
+}
+
+ </script> <!--Script for automatically adjusting the textbox sizes -->
+ 
+	<style>
+    #idealbtn, #idealtxt {
+        height: 38px; /* Match Bootstrap input height */
+    }
+	</style>
+ 
+ 
+  </body>
+</html>
