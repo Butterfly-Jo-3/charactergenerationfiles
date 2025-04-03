@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Character Generator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- FontAwesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   </head>
   <body>
 	<nav class="navbar navbar-expand bg-dark">
@@ -41,14 +43,14 @@
 		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px; margin-top: 15px;">
 			<div class="col-12 col-md-6">
 				<div>
-					<button id="personalitybtn" class="btn btn-secondary me-2 p-2">Personality Trait</button>
-					<textarea type="text" id="personalitytxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+					<button id="personalitybtn" class="btn btn-secondary me-2 p-2">Personality Trait</button> <button id="personalitylockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="personalitytxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
 				</div>
 			</div>
 			<!-- -->	
 			<div class="col-12 col-md-6">
 				<div>
-					<button id="idealbtn" class="btn btn-secondary me-2">Ideal</button>
+					<button id="idealbtn" class="btn btn-secondary me-2">Ideal</button>  <button id="ideallockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
 					<textarea type="text" id="idealtxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
 				</div>
 			</div>
@@ -56,15 +58,15 @@
 		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
 			<div class="col-12 col-md-6">
 				<div>
-					<button id="bondbtn" class="btn btn-secondary me-2">Bond</button>
-					<textarea type="text" id="bondtxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+					<button id="bondbtn" class="btn btn-secondary me-2">Bond</button> <button id="bondlockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="bondtxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
 				</div>
 			</div>
 			<!-- -->	
 			<div class="col-12 col-md-6">
 				<div>
-					<button id="flawsbtn" class="btn btn-secondary me-2">Flaw</button>
-					<textarea type="text" id="flawstxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+					<button id="flawsbtn" class="btn btn-secondary me-2">Flaw</button> <button id="flawlockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="flawstxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
 				</div>
 			</div>
 		</div>	
@@ -73,14 +75,14 @@
 	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px; margin-top: 30px;" >
 		<div class="col-12 col-md-4">
 			<div>
-				<button id="instinctbtn" class="btn btn-secondary me-2">Instinct</button>
-				<textarea type="text" id="instincttxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea>
+				<button id="instinctbtn" class="btn btn-secondary me-2">Instinct</button> <button id="instinctlockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+				<textarea type="text" id="instincttxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea> 
 			</div>
 		</div>
 		<!-- -->	
 		<div class="col-12 col-md-4">
 			<div>
-				<button id="knackbtn" class="btn btn-secondary me-2">Knack</button>
+				<button id="knackbtn" class="btn btn-secondary me-2">Knack</button>  <button id="knacklockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
 				<textarea type="text" id="knacktxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea>
 			</div>
 		</div>
@@ -91,8 +93,8 @@
 	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
 		<div class="col-12 col-md-4">
 			<div>
-				<button id="descriptorbtn" class="btn btn-secondary me-2" >Descriptors</button> <span>Here you can roll three random words that can help describe a character. </span>
-				<textarea type="text" id="descriptortxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea>
+				<button id="descriptorbtn" class="btn btn-secondary me-2" >Descriptors</button> <button id="descriptorlockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button> <span>Here you can roll three random words that can help describe a character. </span>
+				<textarea type="text" id="descriptortxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea> 
 			</div>
 		</div>
 	</div>
@@ -100,20 +102,21 @@
 	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
 		<div class="col-12 col-md-6">
 			<div>
-				<button id="backstorybtn" class="btn btn-secondary me-2">Backstory Hook</button>
-				<textarea type="text" id="backstorytxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				<button id="backstorybtn" class="btn btn-secondary me-2">Backstory Hook</button> <button id="backstorylockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+				<textarea type="text" id="backstorytxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
 			</div>
 		</div>
 		<!-- -->	
 		<div class="col-12 col-md-6">
 			<div>
-				<button id="npcgoalsbtn" class="btn btn-secondary me-2">Goals, Motivation, and Aspirations</button>
-				<textarea type="text" id="npcgoalstxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				<button id="npcgoalsbtn" class="btn btn-secondary me-2">Goals, Motivation, and Aspirations</button> <button id="npcgoalslockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+				<textarea type="text" id="npcgoalstxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
 			</div>
 		</div>
 	</div>	
-	
-	
+	<div>
+	<button id="resetbtn" class="btn btn-danger me-2">Reset Everything</button>
+	</div>
 
 	<!--AAAAAAAAAAA I hate scripts -->
 	<script>
@@ -150,57 +153,108 @@
         });
     });
 </script>
-	<script> <!--PERSONALITY TRAITS -->
-	document.getElementById("personalitybtn").addEventListener("click", function () {
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/personalitytraits.json?nocache=" + new Date().getTime())
-			.then(response => response.json())
-			.then(data => {
 
-				// Check if the data is an array and contains elements
-				if (Array.isArray(data) && data.length > 0) {
-					// Select a random ideal from the array
-					const randomBond = data[Math.floor(Math.random() * data.length)];
+	<script> <!--PERSONALITY -->
+// Track if personalitytxt is locked
+let personalityLocked = false; 
 
-					// Display the random bond in the text box
-					document.getElementById("personalitytxt").value = `"${randomBond}"`;
-				} else {
-					console.error("Data is not in the expected array format or is empty.");
-				}
-			})
-			.catch(error => console.error("Error loading JSON:", error));
-	});
-	</script>
+	// Toggle lock state when personalitylockbtn is clicked
+document.getElementById("personalitylockbtn").addEventListener("click", function () {
+    personalityLocked = !personalityLocked; // Toggle lock state
+    let personalitylockbtn = document.getElementById("personalitylockbtn");
+
+    // Change the icon based on lock state
+    personalitylockbtn.innerHTML = personalityLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
+
+// PERSONALITY TRAITS - Fetch and display a random personality trait
+document.getElementById("personalitybtn").addEventListener("click", function () {
+    if (personalityLocked) return; // Prevent changes if locked
+
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/personalitytraits.json?nocache=" + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            // Check if the data is an array and contains elements
+            if (Array.isArray(data) && data.length > 0) {
+                // Select a random personality trait from the array
+                const randomTrait = data[Math.floor(Math.random() * data.length)];
+
+                // Display the random trait in the text box
+                document.getElementById("personalitytxt").value = `"${randomTrait}"`;
+            } else {
+                console.error("Data is not in the expected array format or is empty.");
+            }
+        })
+        .catch(error => console.error("Error loading JSON:", error));
+});
+</script>
+
 		
-	<script> <!--IDEALS -->
-	document.getElementById("idealbtn").addEventListener("click", function () {
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/ideals.json?nocache=" + new Date().getTime())
-			.then(response => response.json())
-			.then(data => {
+	<script> <!-- IDEALS-->
+// Track if idealtxt is locked
+let idealLocked = false; 
 
-				// Check if the data is an array and contains elements
-				if (Array.isArray(data) && data.length > 0) {
-					// Select a random ideal from the array
-					const randomBond = data[Math.floor(Math.random() * data.length)];
+	// Toggle lock state when ideallockbtn is clicked
+document.getElementById("ideallockbtn").addEventListener("click", function () {
+    idealLocked = !idealLocked; // Toggle lock state
+    let ideallockbtn = document.getElementById("ideallockbtn");
 
-					// Display the random bond in the text box
-					document.getElementById("idealtxt").value = `"${randomBond}"`;
-				} else {
-					console.error("Data is not in the expected array format or is empty.");
-				}
-			})
-			.catch(error => console.error("Error loading JSON:", error));
-	});
-	</script>
+    // Change the icon based on lock state
+    ideallockbtn.innerHTML = idealLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
+
+// IDEALS - Fetch and display a random ideal
+document.getElementById("idealbtn").addEventListener("click", function () {
+    if (idealLocked) return; // Prevent changes if locked
+
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/ideals.json?nocache=" + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            // Check if the data is an array and contains elements
+            if (Array.isArray(data) && data.length > 0) {
+                // Select a random ideal from the array
+                const randomIdeal = data[Math.floor(Math.random() * data.length)];
+
+                // Display the random ideal in the text box
+                document.getElementById("idealtxt").value = `"${randomIdeal}"`;
+            } else {
+                console.error("Data is not in the expected array format or is empty.");
+            }
+        })
+        .catch(error => console.error("Error loading JSON:", error));
+});
+</script>
+
 	
 	<script> <!--BONDS -->
+	// Track if bondtxt is locked
+	let bondLocked = false; 
+
+	// Toggle lock state when bondlockbtn is clicked
+document.getElementById("bondlockbtn").addEventListener("click", function () {
+    bondLocked = !bondLocked; // Toggle lock state
+    let bondlockbtn = document.getElementById("bondlockbtn");
+
+    // Change the icon based on lock state
+    bondlockbtn.innerHTML = bondLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
+
+	// BONDS - Fetch and display a random bond
 	document.getElementById("bondbtn").addEventListener("click", function () {
+		if (bondLocked) return; // Prevent changes if locked
+
 		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/bonds.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
-
 				// Check if the data is an array and contains elements
 				if (Array.isArray(data) && data.length > 0) {
-					// Select a random flaw from the array
+					// Select a random bond from the array
 					const randomBond = data[Math.floor(Math.random() * data.length)];
 
 					// Display the random bond in the text box
@@ -212,63 +266,112 @@
 			.catch(error => console.error("Error loading JSON:", error));
 	});
 	</script>
+
 	
 	<script> <!--FLAWS -->
-	document.getElementById("flawsbtn").addEventListener("click", function () {
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/flaws.json?nocache=" + new Date().getTime())
-			.then(response => response.json())
-			.then(data => {
+// Track if flawstxt is locked
+let flawLocked = false; 
 
-				// Check if the data is an array and contains elements
-				if (Array.isArray(data) && data.length > 0) {
-					// Select a random flaw from the array
-					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+	// Toggle lock state when flawlockbtn is clicked
+document.getElementById("flawlockbtn").addEventListener("click", function () {
+    flawLocked = !flawLocked; // Toggle lock state
+    let flawlockbtn = document.getElementById("flawlockbtn");
 
-					// Display the random flaw in the text box
-					document.getElementById("flawstxt").value = randomFlaw;
-				} else {
-					console.error("Data is not in the expected array format or is empty.");
-				}
-			})
-			.catch(error => console.error("Error loading JSON:", error));
-	});
-	</script>
+    // Change the icon based on lock state
+    flawlockbtn.innerHTML = flawLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
 
-	<script> <!--INSTINCTS -->
-	document.getElementById("instinctbtn").addEventListener("click", function () {
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/instincts.json?nocache=" + new Date().getTime())
-			.then(response => response.json())
-			.then(data => {
+// FLAWS - Fetch and display a random flaw
+document.getElementById("flawsbtn").addEventListener("click", function () {
+    if (flawLocked) return; // Prevent changes if locked
 
-				// Check if the data is an array and contains elements
-				if (Array.isArray(data) && data.length > 0) {
-					// Select a random flaw from the array
-					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/flaws.json?nocache=" + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            // Check if the data is an array and contains elements
+            if (Array.isArray(data) && data.length > 0) {
+                // Select a random flaw from the array
+                const randomFlaw = data[Math.floor(Math.random() * data.length)];
 
-					// Display the random flaw in the text box
-					document.getElementById("instincttxt").value = randomFlaw;
-				} else {
-					console.error("Data is not in the expected array format or is empty.");
-				}
-			})
-			.catch(error => console.error("Error loading JSON:", error));
-	});
-	</script>	
+                // Display the random flaw in the text box
+                document.getElementById("flawstxt").value = randomFlaw;
+            } else {
+                console.error("Data is not in the expected array format or is empty.");
+            }
+        })
+        .catch(error => console.error("Error loading JSON:", error));
+});
+</script>
+
+<script> <!--INSTINCTS -->
+// Track if instincttxt is locked
+let instinctLocked = false; 
+
+	// Toggle lock state when instinctlockbtn is clicked
+document.getElementById("instinctlockbtn").addEventListener("click", function () {
+    instinctLocked = !instinctLocked; // Toggle lock state
+    let instinctlockbtn = document.getElementById("instinctlockbtn");
+
+    // Change the icon based on lock state
+    instinctlockbtn.innerHTML = instinctLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
+
+// INSTINCTS - Fetch and display a random instinct
+document.getElementById("instinctbtn").addEventListener("click", function () {
+    if (instinctLocked) return; // Prevent changes if locked
+
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/instincts.json?nocache=" + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            // Check if the data is an array and contains elements
+            if (Array.isArray(data) && data.length > 0) {
+                // Select a random instinct from the array
+                const randomInstinct = data[Math.floor(Math.random() * data.length)];
+
+                // Display the random instinct in the text box
+                document.getElementById("instincttxt").value = randomInstinct;
+            } else {
+                console.error("Data is not in the expected array format or is empty.");
+            }
+        })
+        .catch(error => console.error("Error loading JSON:", error));
+});
+</script>
 
 
 	<script> <!--KNACKS -->
+	// Track if knacktxt is locked
+	let knackLocked = false; 
+
+	// Toggle lock state when knacklockbtn is clicked
+document.getElementById("knacklockbtn").addEventListener("click", function () {
+    knackLocked = !knackLocked; // Toggle lock state
+    let knacklockbtn = document.getElementById("knacklockbtn");
+
+    // Change the icon based on lock state
+    knacklockbtn.innerHTML = knackLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
+
+	// KNACKS - Fetch and display a random knack
 	document.getElementById("knackbtn").addEventListener("click", function () {
+		if (knackLocked) return; // Prevent changes if locked
+
 		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/knacks.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
-
 				// Check if the data is an array and contains elements
 				if (Array.isArray(data) && data.length > 0) {
-					// Select a random flaw from the array
-					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+					// Select a random knack from the array
+					const randomKnack = data[Math.floor(Math.random() * data.length)];
 
-					// Display the random flaw in the text box
-					document.getElementById("knacktxt").value = randomFlaw;
+					// Display the random knack in the text box
+					document.getElementById("knacktxt").value = randomKnack;
 				} else {
 					console.error("Data is not in the expected array format or is empty.");
 				}
@@ -277,46 +380,80 @@
 	});
 	</script>
 
-	<script> 
-	// DESCRIPTORS
-	document.getElementById("descriptorbtn").addEventListener("click", function () {
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/descriptors.json?nocache=" + new Date().getTime())
-			.then(response => response.json())
-			.then(data => {
-				if (Array.isArray(data) && data.length > 0) {
-					let randomFlaws = [];
-					let usedIndices = new Set();
 
-					while (randomFlaws.length < 3 && usedIndices.size < data.length) {
-						let randomIndex = Math.floor(Math.random() * data.length);
-						if (!usedIndices.has(randomIndex)) {
-							usedIndices.add(randomIndex);
-							randomFlaws.push(data[randomIndex]);
-						}
-					}
+<script> <!--DESCRIPTORS -->
+// Track if descriptortxt is locked
+let descriptorLocked = false; 
 
-					document.getElementById("descriptortxt").value = randomFlaws.join(", ");
-				} else {
-					console.error("Data is not in the expected array format or is empty.");
-				}
-			})
-			.catch(error => console.error("Error loading JSON:", error));
-	});
-	</script>
+	// Toggle lock state when descriptorlockbtn is clicked
+document.getElementById("descriptorlockbtn").addEventListener("click", function () {
+    descriptorLocked = !descriptorLocked; // Toggle lock state
+    let descriptorlockbtn = document.getElementById("descriptorlockbtn");
 
-	<script> <!--BACKSTORY MOTIVATION -->
+    // Change the icon based on lock state
+    descriptorlockbtn.innerHTML = descriptorLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
+
+// DESCRIPTORS - Fetch and display random descriptors
+document.getElementById("descriptorbtn").addEventListener("click", function () {
+    if (descriptorLocked) return; // Prevent changes if locked
+
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/descriptors.json?nocache=" + new Date().getTime())
+        .then(response => response.json())
+        .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+                let randomDescriptors = [];
+                let usedIndices = new Set();
+
+                while (randomDescriptors.length < 3 && usedIndices.size < data.length) {
+                    let randomIndex = Math.floor(Math.random() * data.length);
+                    if (!usedIndices.has(randomIndex)) {
+                        usedIndices.add(randomIndex);
+                        randomDescriptors.push(data[randomIndex]);
+                    }
+                }
+
+                document.getElementById("descriptortxt").value = randomDescriptors.join(", ");
+            } else {
+                console.error("Data is not in the expected array format or is empty.");
+            }
+        })
+        .catch(error => console.error("Error loading JSON:", error));
+});
+</script>
+
+
+	<script> <!--BACKSTORY -->
+	// Track if backstorytxt is locked
+	let backstoryLocked = false; 
+
+	// Toggle lock state when backstorylockbtn is clicked
+document.getElementById("backstorylockbtn").addEventListener("click", function () {
+    backstoryLocked = !backstoryLocked; // Toggle lock state
+    let backstorylockbtn = document.getElementById("backstorylockbtn");
+
+    // Change the icon based on lock state
+    backstorylockbtn.innerHTML = backstoryLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
+
+	// BACKSTORY MOTIVATION - Fetch and display a random backstory motivation
 	document.getElementById("backstorybtn").addEventListener("click", function () {
+		if (backstoryLocked) return; // Prevent changes if locked
+
 		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/backstorymotivation.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
-
 				// Check if the data is an array and contains elements
 				if (Array.isArray(data) && data.length > 0) {
-					// Select a random flaw from the array
-					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+					// Select a random backstory motivation from the array
+					const randomBackstory = data[Math.floor(Math.random() * data.length)];
 
-					// Display the random flaw in the text box
-					document.getElementById("backstorytxt").value = randomFlaw;
+					// Display the random backstory in the text box
+					document.getElementById("backstorytxt").value = randomBackstory;
 				} else {
 					console.error("Data is not in the expected array format or is empty.");
 				}
@@ -325,19 +462,36 @@
 	});
 	</script>
 
+
 	<script> <!--NPC GOALS -->
+	// Track if npcgoalstxt is locked
+	let npcGoalsLocked = false; 
+
+	// Toggle lock state when npcgoalslockbtn is clicked
+document.getElementById("npcgoalslockbtn").addEventListener("click", function () {
+    npcGoalsLocked = !npcGoalsLocked; // Toggle lock state
+    let npcgoalslockbtn = document.getElementById("npcgoalslockbtn");
+
+    // Change the icon based on lock state
+    npcgoalslockbtn.innerHTML = npcGoalsLocked 
+        ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
+        : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
+});
+
+	// NPC GOALS - Fetch and display a random NPC goal
 	document.getElementById("npcgoalsbtn").addEventListener("click", function () {
+		if (npcGoalsLocked) return; // Prevent changes if locked
+
 		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/npcmotivationsgoalsaspirations.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
-
 				// Check if the data is an array and contains elements
 				if (Array.isArray(data) && data.length > 0) {
-					// Select a random flaw from the array
-					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+					// Select a random NPC goal from the array
+					const randomNpcGoal = data[Math.floor(Math.random() * data.length)];
 
-					// Display the random flaw in the text box
-					document.getElementById("npcgoalstxt").value = randomFlaw;
+					// Display the random NPC goal in the text box
+					document.getElementById("npcgoalstxt").value = randomNpcGoal;
 				} else {
 					console.error("Data is not in the expected array format or is empty.");
 				}
@@ -345,6 +499,7 @@
 			.catch(error => console.error("Error loading JSON:", error));
 	});
 	</script>
+
 
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -364,6 +519,34 @@
         resizeInput(personalitytxt); // Trigger resize for personalitytxt
         resizeInput(idealtxt); // Trigger resize for idealtxt
     }); </script> <!--Script for automatically adjusting the textbox sizes -->
+ 
+	<script>
+	document.getElementById("resetbtn").addEventListener("click", function () {
+		// Show confirmation popup
+		const confirmReset = window.confirm("Are you sure you want to clear everything and start over?");
+
+		if (confirmReset) {
+			// Unlock all lock buttons by replacing the icon back to unlocked state
+			let lockButtons = document.querySelectorAll("[id$='lockbtn']");
+			lockButtons.forEach(button => {
+				button.innerHTML = '<i class="fa-solid fa-lock-open"></i>';  // Change to unlocked icon
+			});
+
+			// Clear all text areas (reset text content)
+			let textAreas = document.querySelectorAll("textarea");
+			textAreas.forEach(textarea => {
+				textarea.value = '';  // Clear text
+			});
+
+			// Optionally, reset any other UI elements you need (like toggling any other states back to their default)
+			// Example: Uncheck checkboxes, unselect dropdowns, etc.
+		}
+	});
+	</script>
+
+ 
+ 
+ 
  
 	<style>
     #idealbtn, #idealtxt {
