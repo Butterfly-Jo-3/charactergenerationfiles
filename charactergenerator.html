@@ -32,33 +32,82 @@
     <h1>Hello, world!</h1>
 
 	<!-- -->
-	<div class="container-fluid mt-5">
-		<div class="d-flex">
-			<button id="personalitybtn" class="btn btn-secondary me-2">Personality Trait</button>
-			<textarea type="text" id="personalitytxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+	<div class="container-fluid row" style="margin-bottom: 20px;">
+		<div class="col-5">
+			<div>
+				<button id="personalitybtn" class="btn btn-secondary me-2">Personality Trait</button>
+				<textarea type="text" id="personalitytxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+			</div>
+		</div>
+		<!-- -->	
+		<div class="col-5">
+			<div>
+				<button id="idealbtn" class="btn btn-secondary me-2">Ideal</button>
+				<textarea type="text" id="idealtxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+			</div>
 		</div>
 	</div>
-	<!-- -->	
-	<div class="container-fluid mt-5">
-		<div class="d-flex">
-			<button id="idealbtn" class="btn btn-secondary me-2">Ideal</button>
-			<textarea type="text" id="idealtxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+	<div class="container-fluid row" >
+		<div class="col-5">
+			<div>
+				<button id="bondbtn" class="btn btn-secondary me-2">Bond</button>
+				<textarea type="text" id="bondtxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+			</div>
+		</div>
+		<!-- -->	
+		<div class="col-5">
+			<div>
+				<button id="flawsbtn" class="btn btn-secondary me-2">Flaw</button>
+				<textarea type="text" id="flawstxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+			</div>
+		</div>
+	</div>	
+	
+	<!-- -->
+	<div class="container-fluid row" >
+		<div class="col-5">
+			<div>
+				<button id="instinctbtn" class="btn btn-secondary me-2">Instinct</button>
+				<textarea type="text" id="instincttxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+			</div>
+		</div>
+		<!-- -->	
+		<div class="col-5">
+			<div>
+				<button id="knackbtn" class="btn btn-secondary me-2">Knack</button>
+				<textarea type="text" id="knacktxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+			</div>
+		</div>
+	</div>	
+	
+	
+	
+	<div class="container-fluid row" >
+		<div class="col-7">
+			<div>
+				<button id="descriptorbtn" class="btn btn-secondary me-2">Descriptor</button>
+				<textarea type="text" id="descriptortxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+			</div>
 		</div>
 	</div>
 	<!-- -->
-	<div class="container-fluid mt-5">
-		<div class="d-flex">
-			<button id="bondbtn" class="btn btn-secondary me-2">Bond</button>
-			<textarea type="text" id="bondtxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+	<div class="container-fluid row" >
+		<div class="col-5">
+			<div>
+				<button id="backstorytbtn" class="btn btn-secondary me-2">Backstory Hook</button>
+				<textarea type="text" id="backstorytxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+			</div>
 		</div>
-	</div>
-	<!-- -->
-	<div class="container-fluid mt-5">
-		<div class="d-flex">
-			<button id="flawsbtn" class="btn btn-secondary me-2">Flaw</button>
-			<textarea type="text" id="flawstxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+		<!-- -->	
+		<div class="col-5">
+			<div>
+				<button id="npcgoalsbtn" class="btn btn-secondary me-2">Goals, Motivation, and Aspirations</button>
+				<textarea type="text" id="npcgoalstxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+			</div>
 		</div>
-	</div>
+	</div>	
+	
+	
 
 	<!--AAAAAAAAAAA I hate scripts -->
 	<script> <!--PERSONALITY TRAITS -->
@@ -144,17 +193,131 @@
 			.catch(error => console.error("Error loading JSON:", error));
 	});
 	</script>
-	
+
+	<script> <!--INSTINCTS -->
+	document.getElementById("instinctbtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/instincts.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random flaw from the array
+					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random flaw in the text box
+					document.getElementById("instincttxt").value = randomFlaw;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>	
+
+
+	<script> <!--KNACKS -->
+	document.getElementById("knackbtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/knacks.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random flaw from the array
+					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random flaw in the text box
+					document.getElementById("knacktxt").value = randomFlaw;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
+
+	<script> <!--DESCRIPTORS -->
+	document.getElementById("descriptorbtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/descriptor.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random flaw from the array
+					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random flaw in the text box
+					document.getElementById("descriptortxt").value = randomFlaw;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
+
+	<script> <!--BACKSTORY MOTIVATION -->
+	document.getElementById("backstorybtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/backstorymotivation.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random flaw from the array
+					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random flaw in the text box
+					document.getElementById("backstorytxt").value = randomFlaw;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
+
+	<script> <!--NPC GOALS -->
+	document.getElementById("npcgoalsbtn").addEventListener("click", function () {
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/npcmotivationsgoalsaspirations.json?nocache=" + new Date().getTime())
+			.then(response => response.json())
+			.then(data => {
+
+				// Check if the data is an array and contains elements
+				if (Array.isArray(data) && data.length > 0) {
+					// Select a random flaw from the array
+					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+
+					// Display the random flaw in the text box
+					document.getElementById("npcgoalstxt").value = randomFlaw;
+				} else {
+					console.error("Data is not in the expected array format or is empty.");
+				}
+			})
+			.catch(error => console.error("Error loading JSON:", error));
+	});
+	</script>
+
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	
 	
-	<script>function autoResize(textarea) {
-    textarea.style.height = 'auto'; // Reset height to auto before calculating the new height
-    textarea.style.height = (textarea.scrollHeight) + 'px'; // Adjust to content height
-}
+	<script>    function resizeInput(input) {
+        // Reset height to auto before recalculating the new height
+        input.style.height = 'auto';
+        input.style.height = (input.scrollHeight) + 'px'; // Adjust to content height
+    }
 
- </script> <!--Script for automatically adjusting the textbox sizes -->
+    // Initialize resizing for both textareas
+    document.addEventListener("DOMContentLoaded", function() {
+        var personalitytxt = document.getElementById("personalitytxt");
+        var idealtxt = document.getElementById("idealtxt");
+        
+        resizeInput(personalitytxt); // Trigger resize for personalitytxt
+        resizeInput(idealtxt); // Trigger resize for idealtxt
+    }); </script> <!--Script for automatically adjusting the textbox sizes -->
  
 	<style>
     #idealbtn, #idealtxt {
