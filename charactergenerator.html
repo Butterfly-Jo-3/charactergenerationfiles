@@ -94,7 +94,7 @@
 	<div class="container-fluid row" >
 		<div class="col-5">
 			<div>
-				<button id="backstorytbtn" class="btn btn-secondary me-2">Backstory Hook</button>
+				<button id="backstorybtn" class="btn btn-secondary me-2">Backstory Hook</button>
 				<textarea type="text" id="backstorytxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
 			</div>
 		</div>
@@ -239,7 +239,7 @@
 
 	<script> <!--DESCRIPTORS -->
 	document.getElementById("descriptorbtn").addEventListener("click", function () {
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/descriptor.json?nocache=" + new Date().getTime())
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/descriptors.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
 
