@@ -30,79 +30,85 @@
 	<!--Gap in the code so I can read it easier -->
 	
     <h1>Hello, world!</h1>
-
-	<!-- -->
-	<div class="container-fluid row" style="margin-bottom: 20px;">
-		<div class="col-5">
-			<div>
-				<button id="personalitybtn" class="btn btn-secondary me-2">Personality Trait</button>
-				<textarea type="text" id="personalitytxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
-			</div>
-		</div>
-		<!-- -->	
-		<div class="col-5">
-			<div>
-				<button id="idealbtn" class="btn btn-secondary me-2">Ideal</button>
-				<textarea type="text" id="idealtxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
-			</div>
-		</div>
+	<div class="container-fluid row">
+		<button class="btn btn-secondary" id="activateAllBtn">Roll Everything!</button>
 	</div>
-	<div class="container-fluid row" >
-		<div class="col-5">
-			<div>
-				<button id="bondbtn" class="btn btn-secondary me-2">Bond</button>
-				<textarea type="text" id="bondtxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
-			</div>
-		</div>
-		<!-- -->	
-		<div class="col-5">
-			<div>
-				<button id="flawsbtn" class="btn btn-secondary me-2">Flaw</button>
-				<textarea type="text" id="flawstxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
-			</div>
-		</div>
-	</div>	
-	
 	<!-- -->
-	<div class="container-fluid row" >
-		<div class="col-5">
+	<div class="container border p-3 border-3 w-auto" style="margin-bottom: 10px;"> <!-- creating a box for these ones -->
+		<div>
+			<span style="margin-bottom: 10px;">Here we have the traditional items for character creation.</span> <button class="btn btn-secondary" id="traditionalfourBtn">Roll for all four of these ones.</button>
+		</div>
+		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px; margin-top: 15px;">
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="personalitybtn" class="btn btn-secondary me-2 p-2">Personality Trait</button>
+					<textarea type="text" id="personalitytxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				</div>
+			</div>
+			<!-- -->	
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="idealbtn" class="btn btn-secondary me-2">Ideal</button>
+					<textarea type="text" id="idealtxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="bondbtn" class="btn btn-secondary me-2">Bond</button>
+					<textarea type="text" id="bondtxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				</div>
+			</div>
+			<!-- -->	
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="flawsbtn" class="btn btn-secondary me-2">Flaw</button>
+					<textarea type="text" id="flawstxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<!-- -->
+	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px; margin-top: 30px;" >
+		<div class="col-12 col-md-4">
 			<div>
 				<button id="instinctbtn" class="btn btn-secondary me-2">Instinct</button>
-				<textarea type="text" id="instincttxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				<textarea type="text" id="instincttxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea>
 			</div>
 		</div>
 		<!-- -->	
-		<div class="col-5">
+		<div class="col-12 col-md-4">
 			<div>
 				<button id="knackbtn" class="btn btn-secondary me-2">Knack</button>
-				<textarea type="text" id="knacktxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				<textarea type="text" id="knacktxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea>
 			</div>
 		</div>
 	</div>	
 	
 	
 	
-	<div class="container-fluid row" >
-		<div class="col-7">
+	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
+		<div class="col-12 col-md-4">
 			<div>
-				<button id="descriptorbtn" class="btn btn-secondary me-2">Descriptor</button>
-				<textarea type="text" id="descriptortxt" class="form-control" readonly rows="1" oninput="resizeInput(this)"></textarea>
+				<button id="descriptorbtn" class="btn btn-secondary me-2" >Descriptors</button> <span>Here you can roll three random words that can help describe a character. </span>
+				<textarea type="text" id="descriptortxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea>
 			</div>
 		</div>
 	</div>
 	<!-- -->
-	<div class="container-fluid row" >
-		<div class="col-5">
+	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
+		<div class="col-12 col-md-6">
 			<div>
 				<button id="backstorybtn" class="btn btn-secondary me-2">Backstory Hook</button>
-				<textarea type="text" id="backstorytxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				<textarea type="text" id="backstorytxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
 			</div>
 		</div>
 		<!-- -->	
-		<div class="col-5">
+		<div class="col-12 col-md-6">
 			<div>
 				<button id="npcgoalsbtn" class="btn btn-secondary me-2">Goals, Motivation, and Aspirations</button>
-				<textarea type="text" id="npcgoalstxt" class="form-control" readonly rows="3" oninput="resizeInput(this)"></textarea>
+				<textarea type="text" id="npcgoalstxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
 			</div>
 		</div>
 	</div>	
@@ -110,6 +116,40 @@
 	
 
 	<!--AAAAAAAAAAA I hate scripts -->
+	<script>
+    document.getElementById("activateAllBtn").addEventListener("click", function() {
+        let buttonIds = [
+            "npcgoalsbtn",
+            "backstorybtn",
+            "descriptorbtn",
+            "knackbtn",
+            "instinctbtn",
+            "flawsbtn",
+            "bondbtn",
+            "idealbtn",
+            "personalitybtn"
+        ];
+
+        buttonIds.forEach(id => {
+            document.getElementById(id).click();
+        });
+    });
+</script>
+
+	<script>
+    document.getElementById("traditionalfourBtn").addEventListener("click", function() {
+        let buttonIds = [
+            "flawsbtn",
+            "bondbtn",
+            "idealbtn",
+            "personalitybtn"
+        ];
+
+        buttonIds.forEach(id => {
+            document.getElementById(id).click();
+        });
+    });
+</script>
 	<script> <!--PERSONALITY TRAITS -->
 	document.getElementById("personalitybtn").addEventListener("click", function () {
 		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/personalitytraits.json?nocache=" + new Date().getTime())
@@ -237,19 +277,25 @@
 	});
 	</script>
 
-	<script> <!--DESCRIPTORS -->
+	<script> 
+	// DESCRIPTORS
 	document.getElementById("descriptorbtn").addEventListener("click", function () {
 		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/descriptors.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
-
-				// Check if the data is an array and contains elements
 				if (Array.isArray(data) && data.length > 0) {
-					// Select a random flaw from the array
-					const randomFlaw = data[Math.floor(Math.random() * data.length)];
+					let randomFlaws = [];
+					let usedIndices = new Set();
 
-					// Display the random flaw in the text box
-					document.getElementById("descriptortxt").value = randomFlaw;
+					while (randomFlaws.length < 3 && usedIndices.size < data.length) {
+						let randomIndex = Math.floor(Math.random() * data.length);
+						if (!usedIndices.has(randomIndex)) {
+							usedIndices.add(randomIndex);
+							randomFlaws.push(data[randomIndex]);
+						}
+					}
+
+					document.getElementById("descriptortxt").value = randomFlaws.join(", ");
 				} else {
 					console.error("Data is not in the expected array format or is empty.");
 				}
