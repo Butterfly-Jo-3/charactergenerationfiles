@@ -7,6 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- FontAwesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<style>
+	body {
+      background-color: rgba(9, 1, 12, 0.781) !important;
+    }
+	hr { background-color: rgb(255, 255, 255); height: 1px; border: 0; }
+	</style>
+	
+	
+	
   </head>
   <body>
 	<nav class="navbar navbar-expand bg-dark">
@@ -16,57 +25,68 @@
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
-						<p class="nav-link center text-white h4">My links ---></p>
+						<p class="nav-link center text-white h4"><3</p>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-white" href="https://twitch.tv/butterfly_jo_" target="_blank">Twitch</a>
+						<a class="nav-link text-white" href="https://butterfly-jo.carrd.co/" target="_blank">Butterfly Jo</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link text-white" href="https://x.com/Butterfly_Jo_33" target="_blank">Twitter</a>
-					</li>
-
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<!--Gap in the code so I can read it easier -->
-	
-    <h1>Hello, world!</h1>
-	<div class="container-fluid row">
-		<button class="btn btn-secondary" id="activateAllBtn">Roll Everything!</button>
+	<!-- Gap -->
+	<div class="div container-fluid m-3">
+		<p class="text-white lead" style="margin-bottom: 5px;">Hello! I hope you are doing amazing!</p>
+		<p class="text-white">I made this generator with the purpose of quickly creating a character that felt alive and had motivations. This was made for creating NPCs firstly, but a lot of this overlaps with making a player character! It should be straightforward to utilize this tool, but please let me know if there's anything that should be adapted or added.</p>
+		<p class="text-white">At the bottom of this page is a helpful area where you can collect everything you have rolled into one place and copy it.</p>
+		<button id="tobottombtn" class="btn btn-sm btn-secondary me-2" >To Bottom</button>
+
+
+	</div>
+	<hr class="color-white">
+
+	<div class="container text-center">
+		<div class="">
+			<button class="btn btn-success" id="activateAllBtn" style="margin-bottom: 20px;">Roll Everything!</button>
+		</div>
+		<div class="m-3">
+			<span class="text-white">This button is useful for clearing anything that you haven't locked.</span></br>
+			<button id="clearAllBtn" class="btn btn-info" style="margin-bottom: 20px;">Clear Unlocked</button>
+		</div>
+
 	</div>
 	<!-- -->
-	<div class="container border p-3 border-3 w-auto" style="margin-bottom: 10px;"> <!-- creating a box for these ones -->
+	<div class="container border p-3 rounded border-5 border-dark-subtle w-auto" style="margin-bottom: 10px;"> <!-- creating a box for these ones -->
 		<div>
-			<span style="margin-bottom: 10px;">Here we have the traditional items for character creation.</span> <button class="btn btn-secondary" id="traditionalfourBtn">Roll for all four of these ones.</button>
+			<span style="margin-bottom: 10px;" class="text-white">Here we have the traditional items for character creation.</span> <button class="btn btn-secondary btn-sm" id="traditionalfourBtn">Roll Traditional Four</button>
 		</div>
 		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px; margin-top: 15px;">
 			<div class="col-12 col-md-6">
 				<div>
-					<button id="personalitybtn" class="btn btn-secondary me-2 p-2">Personality Trait</button> <button id="personalitylockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
-					<textarea type="text" id="personalitytxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
+					<button id="personalitybtn" class="btn btn-sm btn-secondary me-2">Personality Trait</button> <button id="personalitylockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="personalitytxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;"  rows="3" oninput="resizeInput(this)"></textarea> 
 				</div>
 			</div>
 			<!-- -->	
 			<div class="col-12 col-md-6">
 				<div>
-					<button id="idealbtn" class="btn btn-secondary me-2">Ideal</button>  <button id="ideallockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
-					<textarea type="text" id="idealtxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea>
+					<button id="idealbtn" class="btn btn-sm btn-secondary me-2">Ideal</button>  <button id="ideallockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="idealtxt" class="col-12 col-md-auto form-control fs-6 fs-md-4 fs-lg-2" style="margin-top: 5px;"  rows="3" oninput="resizeInput(this)"></textarea>
 				</div>
 			</div>
 		</div>
 		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
 			<div class="col-12 col-md-6">
 				<div>
-					<button id="bondbtn" class="btn btn-secondary me-2">Bond</button> <button id="bondlockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
-					<textarea type="text" id="bondtxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
+					<button id="bondbtn" class="btn btn-sm btn-secondary me-2">Bond</button> <button id="bondlockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="bondtxt" class="form-control" style="margin-top: 5px;"  rows="3" oninput="resizeInput(this)"></textarea> 
 				</div>
 			</div>
 			<!-- -->	
 			<div class="col-12 col-md-6">
 				<div>
-					<button id="flawsbtn" class="btn btn-secondary me-2">Flaw</button> <button id="flawlockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
-					<textarea type="text" id="flawstxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
+					<button id="flawsbtn" class="btn btn-sm btn-secondary me-2">Flaw</button> <button id="flawlockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="flawstxt" class="form-control" style="margin-top: 5px;"  rows="3" oninput="resizeInput(this)"></textarea> 
 				</div>
 			</div>
 		</div>	
@@ -75,51 +95,130 @@
 	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px; margin-top: 30px;" >
 		<div class="col-12 col-md-4">
 			<div>
-				<button id="instinctbtn" class="btn btn-secondary me-2">Instinct</button> <button id="instinctlockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
-				<textarea type="text" id="instincttxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea> 
+				<button id="instinctbtn" class="btn btn-sm btn-secondary me-2">Instinct</button> <button id="instinctlockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+				<textarea type="text" id="instincttxt" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
 			</div>
 		</div>
 		<!-- -->	
 		<div class="col-12 col-md-4">
 			<div>
-				<button id="knackbtn" class="btn btn-secondary me-2">Knack</button>  <button id="knacklockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
-				<textarea type="text" id="knacktxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea>
+				<button id="knackbtn" class="btn btn-sm btn-secondary me-2">Knack</button>  <button id="knacklockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button> <span class="text-white">This button generates a really random defining 'thing.'</span>
+				<textarea type="text" id="knacktxt" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea>
+			</div>
+		</div>
+		<div class="col-12 col-md-4">
+			<div>
+				<button id="descriptorbtn" class="btn btn-sm btn-secondary me-2" >Descriptors</button> <button id="descriptorlockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button> <span class="text-white">Here you can roll three random words that can help describe a character. </span>
+				<textarea type="text" id="descriptortxt" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
 			</div>
 		</div>
 	</div>	
-	
-	
-	
-	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
-		<div class="col-12 col-md-4">
-			<div>
-				<button id="descriptorbtn" class="btn btn-secondary me-2" >Descriptors</button> <button id="descriptorlockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button> <span>Here you can roll three random words that can help describe a character. </span>
-				<textarea type="text" id="descriptortxt" class="form-control" style="margin-top: 5px;" readonly rows="1" oninput="resizeInput(this)"></textarea> 
-			</div>
-		</div>
-	</div>
+
 	<!-- -->
 	<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;" >
 		<div class="col-12 col-md-6">
 			<div>
-				<button id="backstorybtn" class="btn btn-secondary me-2">Backstory Hook</button> <button id="backstorylockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
-				<textarea type="text" id="backstorytxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
+				<button id="backstorybtn" class="btn btn-sm btn-secondary me-2">Backstory Hook</button> <button id="backstorylockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button> <span class="text-white">This is more relevant to a player character than NPC. Not many options currently, please feel free to suggest some!</span>
+				<textarea type="text" id="backstorytxt" class="form-control" style="margin-top: 5px;"  rows="3" oninput="resizeInput(this)"></textarea> 
 			</div>
 		</div>
 		<!-- -->	
 		<div class="col-12 col-md-6">
 			<div>
-				<button id="npcgoalsbtn" class="btn btn-secondary me-2">Goals, Motivation, and Aspirations</button> <button id="npcgoalslockbtn" class="btn btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
-				<textarea type="text" id="npcgoalstxt" class="form-control" style="margin-top: 5px;" readonly rows="3" oninput="resizeInput(this)"></textarea> 
+				<button id="npcgoalsbtn" class="btn btn-sm btn-secondary me-2">Goals, Motivation, and Aspirations</button> <button id="npcgoalslockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+				<textarea type="text" id="npcgoalstxt" class="form-control" style="margin-top: 5px;"  rows="3" oninput="resizeInput(this)"></textarea> 
 			</div>
 		</div>
 	</div>	
-	<div>
-	<button id="resetbtn" class="btn btn-danger me-2">Reset Everything</button>
+
+
+
+	<div class="container rounded border border-5 border-dark-subtle p-3 border-3 w-auto" style="margin-bottom: 10px;"> <!-- creating a box for the UNE options -->
+		<div>
+			<span style="margin-bottom: 10px;" class="text-white">The following information and rolling tables are taken directly from <b>UNE: the universal NPC emulator revised By Zach Best in 2007.</b> Published by Conjecture Games.</span></br>
+			<span><a class="text-white" href="https://www.drivethrurpg.com/en/product/134163/une-the-universal-npc-emulator-rev" target="_blank">Please grab a copy for yourself here!<a></span>
+			<hr>
+			<span class="text-white">This short book is super awesome and contains a old-school way to develop and flesh out a character really quickly! I'm taking the portions from the <b>'NPC Creator'</b> and <b>'NPC Motivation'</b> sections to allow for a quick character creation alternative.</span> </br> <button class="btn btn-sm btn-secondary" id="unerolleverthingbtn" style="margin-top: 5px;">Roll!</button><button id="unelockbtn" class="btn btn-sm btn-secondary me-2" style="margin-top: 5px;"><i class="fa-solid fa-lock-open"></i></button></br></br>
+		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 30px;">	
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="npcmodifiersbtn" class="btn btn-sm btn-secondary me-2">NPC Modifiers</button> <button id="npcmodifierslockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="npcmodifierstxt" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="npcnounbtn" class="btn btn-sm btn-secondary me-2">NPC Noun</button> <button id="npcnounlockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="npcnountxt" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 5px;">	
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="npcmotivationverbbtn" class="btn btn-sm btn-secondary me-2">NPC Motivation Verb 1</button> <button id="npcmotivationverblockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="npcmotivationverbtxt" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="npcmotivationnounbtn" class="btn btn-sm btn-secondary me-2">NPC Motivation Noun 1</button> <button id="npcmotivationnounlockbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="npcmotivationnountxt" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 5px;">	
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="npcmotivationverbbtn2" class="btn btn-sm btn-secondary me-2">NPC Motivation Verb 2</button> <button id="npcmotivationverblockbtn2" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="npcmotivationverbtxt2" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="npcmotivationnounbtn2" class="btn btn-sm btn-secondary me-2">NPC Motivation Noun 2</button> <button id="npcmotivationnounlockbtn2" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="npcmotivationnountxt2" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid row flex-column flex-md-row" style="margin-bottom: 5px;">	
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="npcmotivationverbbtn3" class="btn btn-sm btn-secondary me-2">NPC Motivation Verb 3</button> <button id="npcmotivationverblockbtn3" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="npcmotivationverbtxt3" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<div>
+					<button id="npcmotivationnounbtn3" class="btn btn-sm btn-secondary me-2">NPC Motivation Noun 3</button> <button id="npcmotivationnounlockbtn3" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-lock-open"></i></button>
+					<textarea type="text" id="npcmotivationnountxt3" class="form-control" style="margin-top: 5px;"  rows="1" oninput="resizeInput(this)"></textarea> 
+				</div>
+			</div>
+		</div>
+
+		</div>
+		<textarea type="text" class="form-control" style="margin-top: 5px;"   rows="1" oninput="resizeInput(this)" id="npcSummaryTxt"></textarea>
+	</div>
+	</br>
+	<div  class="container">
+	<span class="text-white">If you want everything you've selected in one simple place, simply press this button! Feel free to edit the format, words, or anything else in this area. You can then press the copy icon to add it to your clipboard for pasting.
+	<button id="showeverythingbtn" class="btn btn-sm btn-secondary me-2">Show Everything</button>
+	<button id="copyeverythingbtn" class="btn btn-sm btn-secondary me-2"><i class="fa-solid fa-copy"></i></button>
+	<textarea type="text" class="form-control" style="margin-top: 10px;" rows="12" oninput="resizeInput(this)" id="showeverythingtxt"></textarea>
 	</div>
 
+	</br>
+	
+	<div class="me-2 m-3">
+	<button id="resetbtn" class="btn btn-danger ">Reset Everything</button>
+		<div class="">
+			<button id="backtotopbtn" class="btn btn-lg btn-secondary me-2" style="margin-top: 25px;">Back to Top</button>
+		</div>
+	</div>
+	
+	
 	<!--AAAAAAAAAAA I hate scripts -->
-	<script>
+	<script> <!--This script rolls everything across the entire html file -->
     document.getElementById("activateAllBtn").addEventListener("click", function() {
         let buttonIds = [
             "npcgoalsbtn",
@@ -127,6 +226,29 @@
             "descriptorbtn",
             "knackbtn",
             "instinctbtn",
+            "flawsbtn",
+            "bondbtn",
+            "idealbtn",
+            "personalitybtn",
+			"npcmodifiersbtn",
+			"npcnounbtn",
+			"npcmotivationverbbtn",
+			"npcmotivationverbbtn2",
+			"npcmotivationverbbtn3",
+			"npcmotivationnounbtn",
+			"npcmotivationnounbtn2",
+			"npcmotivationnounbtn3"			
+        ];
+
+        buttonIds.forEach(id => {
+            document.getElementById(id).click();
+        });
+    });
+</script>
+
+	<script> <!--This script rolls tradionalfour items at the top of the html -->
+    document.getElementById("traditionalfourBtn").addEventListener("click", function() {
+        let buttonIds = [
             "flawsbtn",
             "bondbtn",
             "idealbtn",
@@ -139,13 +261,17 @@
     });
 </script>
 
-	<script>
-    document.getElementById("traditionalfourBtn").addEventListener("click", function() {
+	<script> <!--This script rolls UNE emulator -->
+    document.getElementById("unerolleverthingbtn").addEventListener("click", function() {
         let buttonIds = [
-            "flawsbtn",
-            "bondbtn",
-            "idealbtn",
-            "personalitybtn"
+			"npcmodifiersbtn",
+			"npcnounbtn",
+			"npcmotivationverbbtn",
+			"npcmotivationverbbtn2",
+			"npcmotivationverbbtn3",
+			"npcmotivationnounbtn",
+			"npcmotivationnounbtn2",
+			"npcmotivationnounbtn3"	
         ];
 
         buttonIds.forEach(id => {
@@ -167,13 +293,19 @@ document.getElementById("personalitylockbtn").addEventListener("click", function
     personalitylockbtn.innerHTML = personalityLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
 
+		// Disable or enable the textarea
+		const Personalitytxt = document.getElementById("personalitytxt");
+		if (Personalitytxt) {
+			Personalitytxt.disabled = personalityLocked;
+		}
+	});
+	
 // PERSONALITY TRAITS - Fetch and display a random personality trait
 document.getElementById("personalitybtn").addEventListener("click", function () {
     if (personalityLocked) return; // Prevent changes if locked
 
-    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/personalitytraits.json?nocache=" + new Date().getTime())
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/personalitytraits.json?nocache=" + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             // Check if the data is an array and contains elements
@@ -205,13 +337,19 @@ document.getElementById("ideallockbtn").addEventListener("click", function () {
     ideallockbtn.innerHTML = idealLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
 
+		// Disable or enable the textarea
+		const Idealtxt = document.getElementById("idealtxt");
+		if (Idealtxt) {
+			Idealtxt.disabled = idealLocked;
+		}
+	});
+	
 // IDEALS - Fetch and display a random ideal
 document.getElementById("idealbtn").addEventListener("click", function () {
     if (idealLocked) return; // Prevent changes if locked
 
-    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/ideals.json?nocache=" + new Date().getTime())
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/ideals.json?nocache=" + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             // Check if the data is an array and contains elements
@@ -243,13 +381,19 @@ document.getElementById("bondlockbtn").addEventListener("click", function () {
     bondlockbtn.innerHTML = bondLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
 
+		// Disable or enable the textarea
+		const Bondtxt = document.getElementById("bondtxt");
+		if (Bondtxt) {
+			Bondtxt.disabled = bondLocked;
+		}
+	});
+	
 	// BONDS - Fetch and display a random bond
 	document.getElementById("bondbtn").addEventListener("click", function () {
 		if (bondLocked) return; // Prevent changes if locked
 
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/bonds.json?nocache=" + new Date().getTime())
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/bonds.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
 				// Check if the data is an array and contains elements
@@ -281,13 +425,19 @@ document.getElementById("flawlockbtn").addEventListener("click", function () {
     flawlockbtn.innerHTML = flawLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
 
+		// Disable or enable the textarea
+		const Flawstxt = document.getElementById("flawstxt");
+		if (Flawstxt) {
+			Flawstxt.disabled = flawLocked;
+		}
+	});
+	
 // FLAWS - Fetch and display a random flaw
 document.getElementById("flawsbtn").addEventListener("click", function () {
     if (flawLocked) return; // Prevent changes if locked
 
-    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/flaws.json?nocache=" + new Date().getTime())
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/flaws.json?nocache=" + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             // Check if the data is an array and contains elements
@@ -318,13 +468,19 @@ document.getElementById("instinctlockbtn").addEventListener("click", function ()
     instinctlockbtn.innerHTML = instinctLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
 
+		// Disable or enable the textarea
+		const Instincttxt = document.getElementById("instincttxt");
+		if (Instincttxt) {
+			Instincttxt.disabled = instinctLocked;
+		}
+	});
+	
 // INSTINCTS - Fetch and display a random instinct
 document.getElementById("instinctbtn").addEventListener("click", function () {
     if (instinctLocked) return; // Prevent changes if locked
 
-    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/instincts.json?nocache=" + new Date().getTime())
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/instincts.json?nocache=" + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             // Check if the data is an array and contains elements
@@ -333,7 +489,7 @@ document.getElementById("instinctbtn").addEventListener("click", function () {
                 const randomInstinct = data[Math.floor(Math.random() * data.length)];
 
                 // Display the random instinct in the text box
-                document.getElementById("instincttxt").value = randomInstinct;
+                document.getElementById("instincttxt").value = randomInstinct+".";
             } else {
                 console.error("Data is not in the expected array format or is empty.");
             }
@@ -356,13 +512,18 @@ document.getElementById("knacklockbtn").addEventListener("click", function () {
     knacklockbtn.innerHTML = knackLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
 
+		// Disable or enable the textarea
+		const Knacktxt = document.getElementById("knacktxt");
+		if (Knacktxt) {
+			Knacktxt.disabled = knackLocked;
+		}
+	});
 	// KNACKS - Fetch and display a random knack
 	document.getElementById("knackbtn").addEventListener("click", function () {
 		if (knackLocked) return; // Prevent changes if locked
 
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/knacks.json?nocache=" + new Date().getTime())
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/knacks.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
 				// Check if the data is an array and contains elements
@@ -371,7 +532,7 @@ document.getElementById("knacklockbtn").addEventListener("click", function () {
 					const randomKnack = data[Math.floor(Math.random() * data.length)];
 
 					// Display the random knack in the text box
-					document.getElementById("knacktxt").value = randomKnack;
+					document.getElementById("knacktxt").value = randomKnack+".";
 				} else {
 					console.error("Data is not in the expected array format or is empty.");
 				}
@@ -394,13 +555,18 @@ document.getElementById("descriptorlockbtn").addEventListener("click", function 
     descriptorlockbtn.innerHTML = descriptorLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
 
+		// Disable or enable the textarea
+		const Descriptortxt = document.getElementById("descriptortxt");
+		if (Descriptortxt) {
+			Descriptortxt.disabled = descriptorLocked;
+		}
+	});
 // DESCRIPTORS - Fetch and display random descriptors
 document.getElementById("descriptorbtn").addEventListener("click", function () {
     if (descriptorLocked) return; // Prevent changes if locked
 
-    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/descriptors.json?nocache=" + new Date().getTime())
+    fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/descriptors.json?nocache=" + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             if (Array.isArray(data) && data.length > 0) {
@@ -415,7 +581,7 @@ document.getElementById("descriptorbtn").addEventListener("click", function () {
                     }
                 }
 
-                document.getElementById("descriptortxt").value = randomDescriptors.join(", ");
+                document.getElementById("descriptortxt").value = randomDescriptors.join(", ")+".";
             } else {
                 console.error("Data is not in the expected array format or is empty.");
             }
@@ -438,13 +604,20 @@ document.getElementById("backstorylockbtn").addEventListener("click", function (
     backstorylockbtn.innerHTML = backstoryLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
+
+		// Disable or enable the textarea
+		const Backstorytxt = document.getElementById("backstorytxt");
+		if (Backstorytxt) {
+			Backstorytxt.disabled = backstoryLocked;
+		}
+	});
+
 
 	// BACKSTORY MOTIVATION - Fetch and display a random backstory motivation
 	document.getElementById("backstorybtn").addEventListener("click", function () {
 		if (backstoryLocked) return; // Prevent changes if locked
 
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/backstorymotivation.json?nocache=" + new Date().getTime())
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/backstorymotivation.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
 				// Check if the data is an array and contains elements
@@ -453,7 +626,7 @@ document.getElementById("backstorylockbtn").addEventListener("click", function (
 					const randomBackstory = data[Math.floor(Math.random() * data.length)];
 
 					// Display the random backstory in the text box
-					document.getElementById("backstorytxt").value = randomBackstory;
+					document.getElementById("backstorytxt").value = `"${randomBackstory}"`;
 				} else {
 					console.error("Data is not in the expected array format or is empty.");
 				}
@@ -461,7 +634,6 @@ document.getElementById("backstorylockbtn").addEventListener("click", function (
 			.catch(error => console.error("Error loading JSON:", error));
 	});
 	</script>
-
 
 	<script> <!--NPC GOALS -->
 	// Track if npcgoalstxt is locked
@@ -476,13 +648,20 @@ document.getElementById("npcgoalslockbtn").addEventListener("click", function ()
     npcgoalslockbtn.innerHTML = npcGoalsLocked 
         ? '<i class="fa-solid fa-lock"></i>'  // Locked icon
         : '<i class="fa-solid fa-lock-open"></i>';  // Unlocked icon
-});
+
+		// Disable or enable the textarea
+		const npcGoalsTxt = document.getElementById("npcgoalstxt");
+		if (npcGoalsTxt) {
+			npcGoalsTxt.disabled = npcGoalsLocked;
+		}
+	});
+
 
 	// NPC GOALS - Fetch and display a random NPC goal
 	document.getElementById("npcgoalsbtn").addEventListener("click", function () {
 		if (npcGoalsLocked) return; // Prevent changes if locked
 
-		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/npcmotivationsgoalsaspirations.json?nocache=" + new Date().getTime())
+		fetch("https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/npcmotivationsgoalsaspirations.json?nocache=" + new Date().getTime())
 			.then(response => response.json())
 			.then(data => {
 				// Check if the data is an array and contains elements
@@ -500,7 +679,147 @@ document.getElementById("npcgoalslockbtn").addEventListener("click", function ()
 	});
 	</script>
 
+	<script> <!--General streamlined version of the button interface. Trial version. -->
+	const npcElements = [
+    {
+        buttonId: "npcmodifiersbtn",
+        lockBtnId: "npcmodifierslockbtn",
+        textAreaId: "npcmodifierstxt",
+        jsonUrl: "https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/unenpcmodifier.json"
+    },
+    {
+        buttonId: "npcnounbtn",
+        lockBtnId: "npcnounlockbtn",
+        textAreaId: "npcnountxt",
+        jsonUrl:"https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/unenpcnoun.json"
+    },
+    {
+        buttonId: "npcmotivationverbbtn",
+        lockBtnId: "npcmotivationverblockbtn",
+        textAreaId: "npcmotivationverbtxt",
+        jsonUrl: "https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/verbmotivationnpc.json"
+    },
+    {
+        buttonId: "npcmotivationverbbtn2",
+        lockBtnId: "npcmotivationverblockbtn2",
+        textAreaId: "npcmotivationverbtxt2",
+        jsonUrl: "https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/verbmotivationnpc.json"
+    },
+    {
+        buttonId: "npcmotivationverbbtn3",
+        lockBtnId: "npcmotivationverblockbtn3",
+        textAreaId: "npcmotivationverbtxt3",
+        jsonUrl: "https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/verbmotivationnpc.json"
+    },
+    {
+        buttonId: "npcmotivationnounbtn",
+        lockBtnId: "npcmotivationnounlockbtn",
+        textAreaId: "npcmotivationnountxt",
+        jsonUrl: "https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/nounmotivationnpc.json"
+    },
+    {
+        buttonId: "npcmotivationnounbtn2",
+        lockBtnId: "npcmotivationnounlockbtn2",
+        textAreaId: "npcmotivationnountxt2",
+        jsonUrl: "https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/nounmotivationnpc.json"
+    },
+    {
+        buttonId: "npcmotivationnounbtn3",
+        lockBtnId: "npcmotivationnounlockbtn3",
+        textAreaId: "npcmotivationnountxt3",
+        jsonUrl: "https://raw.githubusercontent.com/Butterfly-Jo-3/charactergenerationfiles/main/JSONfiles/nounmotivationnpc.json"
+    },
+	{
+		textAreaId: "npcSummaryTxt",
+	}]; </script>
 
+<!--This script controls the locking and unlocking of the UNE text areas, along with the fetching of the JSON files from GitHub to paste into the text areas -->
+	<script>
+	const lockStates = {}; // Keeps track of which text areas are locked
+
+	npcElements.forEach(({ buttonId, lockBtnId, textAreaId, jsonUrl }) => {
+    lockStates[textAreaId] = false; // Default: unlocked
+
+    // Individual Lock/Unlock Button (check first!)
+    const lockBtn = document.getElementById(lockBtnId);
+    if (lockBtn) {
+        lockBtn.addEventListener("click", () => {
+            lockStates[textAreaId] = !lockStates[textAreaId];
+
+            lockBtn.innerHTML = lockStates[textAreaId]
+                ? '<i class="fa-solid fa-lock"></i>'
+                : '<i class="fa-solid fa-lock-open"></i>';
+
+            const textArea = document.getElementById(textAreaId);
+            if (textArea) {
+                textArea.disabled = lockStates[textAreaId];
+            }
+        });
+    }
+
+    // Button to fetch and display JSON
+    const actionBtn = document.getElementById(buttonId);
+    if (actionBtn) {
+        actionBtn.addEventListener("click", () => {
+            if (lockStates[textAreaId]) return; // Do nothing if locked
+
+            fetch(jsonUrl + "?nocache=" + new Date().getTime())
+                .then(res => res.json())
+                .then(data => {
+                    if (Array.isArray(data) && data.length > 0) {
+                        const randomItem = data[Math.floor(Math.random() * data.length)];
+                        const textArea = document.getElementById(textAreaId);
+                        if (textArea) {
+                            textArea.value = randomItem;
+                            updateNpcSummary();
+                        }
+                    } else {
+                        console.error("JSON is empty or not an array:", jsonUrl);
+                    }
+                })
+                .catch(err => console.error("Fetch error:", err));
+        });
+    }
+});
+
+	// Master Lock Toggle Button
+	let allLocked = false;
+
+	document.getElementById("unelockbtn").addEventListener("click", () => {
+		allLocked = !allLocked;
+
+		npcElements.forEach(({ lockBtnId, textAreaId }) => {
+			lockStates[textAreaId] = allLocked;
+
+			// Only update lock button if lockBtnId is present and exists in DOM
+			if (lockBtnId) {
+				const lockBtn = document.getElementById(lockBtnId);
+				if (lockBtn) {
+					lockBtn.innerHTML = allLocked
+						? '<i class="fa-solid fa-lock"></i>'
+						: '<i class="fa-solid fa-lock-open"></i>';
+				}
+			}
+
+			const textArea = document.getElementById(textAreaId);
+			if (textArea) {
+				textArea.disabled = allLocked;
+			}
+		});
+
+		// Update master lock icon
+		const masterBtn = document.getElementById("unelockbtn");
+		if (masterBtn) {
+			masterBtn.innerHTML = allLocked
+				? '<i class="fa-solid fa-lock"></i>'
+				: '<i class="fa-solid fa-lock-open"></i>';
+		}
+	}); </script>
+	
+
+
+
+<!--						 -->
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	
@@ -520,40 +839,189 @@ document.getElementById("npcgoalslockbtn").addEventListener("click", function ()
         resizeInput(idealtxt); // Trigger resize for idealtxt
     }); </script> <!--Script for automatically adjusting the textbox sizes -->
  
+ 
+ 
+ 
+ 
 	<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const copyEverythingBtn = document.getElementById("copyeverythingbtn");
+		const showEverythingTxt = document.getElementById("showeverythingtxt");
+
+		copyEverythingBtn.addEventListener("click", () => {
+			showEverythingTxt.select();
+			showEverythingTxt.setSelectionRange(0, 99999);
+			navigator.clipboard.writeText(showEverythingTxt.value);
+
+		});
+	});
+	</script>
+
+
+
+	<script>  // Used for the final text area to show everything when the show everything button is clicked
+	document.addEventListener("DOMContentLoaded", () => {
+		const showEverythingBtn = document.getElementById("showeverythingbtn");
+		const outputArea = document.getElementById("showeverythingtxt");
+
+		showEverythingBtn.addEventListener("click", () => {
+			const fieldsToCombine = [
+			"personalitytxt",
+			"idealtxt",
+			"bondtxt",
+			"flawstxt",
+			"instincttxt",
+			"knacktxt",
+			"descriptortxt",
+			"backstorytxt",
+			"npcgoalstxt",
+			"npcSummaryTxt"
+			];
+
+			const combinedText = fieldsToCombine
+				.map(id => document.getElementById(id)?.value?.trim() || "")
+				.filter(text => text !== "") // Skip empty ones
+				.join("\n"); // Add spacing between sections
+
+			if (outputArea) {
+				outputArea.value = combinedText;
+			}
+		});
+	});
+</script>
+	<script> // clear all script
+	document.addEventListener("DOMContentLoaded", () => {
+		document.getElementById("clearAllBtn").addEventListener("click", () => {
+			const allTextareas = document.querySelectorAll("textarea");
+			allTextareas.forEach(textarea => {
+				if (!textarea.disabled) {
+					textarea.value = "";
+				}
+			});
+		});
+	});
+</script>
+
+
+
+
+	<!-- This script combines the texts from the UNE into one sentence. -->
+	<script>
+	
+		const updateNpcSummary = () => {
+			const getValue = id => document.getElementById(id)?.value?.trim() || "";
+
+			const part1 = getValue("npcmodifierstxt");
+			const part2 = getValue("npcnountxt");
+			const verb1 = getValue("npcmotivationverbtxt");
+			const verb2 = getValue("npcmotivationverbtxt2");
+			const verb3 = getValue("npcmotivationverbtxt3");
+			const noun1 = getValue("npcmotivationnountxt");
+			const noun2 = getValue("npcmotivationnountxt2");
+			const noun3 = getValue("npcmotivationnountxt3");
+
+			const combinedsentence = `"A ${part1} ${part2}, ${verb1} ${noun1}, ${verb2} ${noun2}, and ${verb3} ${noun3}."`;
+
+			const outputArea = document.getElementById("npcSummaryTxt");
+			if (outputArea) {
+				outputArea.value = combinedsentence;
+			}
+		};
+
+		// Attach listeners to all 8 inputs to auto-update the summary
+		document.addEventListener("DOMContentLoaded", () => {
+		[
+			"npcmodifierstxt",
+			"npcnountxt",
+			"npcmotivationverbtxt",
+			"npcmotivationverbtxt2",
+			"npcmotivationverbtxt3",
+			"npcmotivationnountxt",
+			"npcmotivationnountxt2",
+			"npcmotivationnountxt3"
+		].forEach(id => {
+			const el = document.getElementById(id);
+			if (el) {
+				el.addEventListener("input", updateNpcSummary);
+			}
+		});
+	});
+</script> 
+	<script> //Back to top script
+		document.addEventListener("DOMContentLoaded", () => {
+			const scrollToTop = () => {
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			};
+
+			document.getElementById("backtotopbtn").addEventListener("click", scrollToTop);
+			document.getElementById("resetbtn").addEventListener("click", scrollToTop);
+		});
+	</script>
+	<script> //Scroll to bottom script
+		document.addEventListener("DOMContentLoaded", () => {
+			document.getElementById("tobottombtn").addEventListener("click", () => {
+				window.scrollTo({ 
+					top: document.body.scrollHeight, 
+					behavior: "smooth" 
+				});
+			});
+		});
+	</script>
+	
+
+
+
+	<script>
+	// Giga Reset Button
 	document.getElementById("resetbtn").addEventListener("click", function () {
-		// Show confirmation popup
 		const confirmReset = window.confirm("Are you sure you want to clear everything and start over?");
 
 		if (confirmReset) {
-			// Unlock all lock buttons by replacing the icon back to unlocked state
-			let lockButtons = document.querySelectorAll("[id$='lockbtn']");
-			lockButtons.forEach(button => {
-				button.innerHTML = '<i class="fa-solid fa-lock-open"></i>';  // Change to unlocked icon
+			// === PART 1: Reset npcElements-specific lock system ===
+			npcElements.forEach(({ lockBtnId, textAreaId }) => {
+				lockStates[textAreaId] = false; // Unlock
+
+				// Update lock icon
+				if (lockBtnId) {
+					const lockBtn = document.getElementById(lockBtnId);
+					if (lockBtn) {
+						lockBtn.innerHTML = '<i class="fa-solid fa-lock-open"></i>';
+					}
+				}
+
+				// Unlock and clear text area
+				const textArea = document.getElementById(textAreaId);
+				if (textArea) {
+					textArea.disabled = false;
+					textArea.value = '';
+				}
 			});
 
-			// Clear all text areas (reset text content)
-			let textAreas = document.querySelectorAll("textarea");
-			textAreas.forEach(textarea => {
-				textarea.value = '';  // Clear text
+			// === PART 2: Reset global master lock icon ===
+			const masterBtn = document.getElementById("unelockbtn");
+			if (masterBtn) {
+				masterBtn.innerHTML = '<i class="fa-solid fa-lock-open"></i>';
+			}
+			allLocked = false;
+
+			// === PART 3: Reset *all* textareas and unlock them ===
+			// (Covers textareas outside npcElements too)
+			const allTextareas = document.querySelectorAll("textarea");
+			allTextareas.forEach(textarea => {
+				textarea.disabled = false;  // Ensure unlocked
+				textarea.value = '';        // Clear content
 			});
 
-			// Optionally, reset any other UI elements you need (like toggling any other states back to their default)
-			// Example: Uncheck checkboxes, unselect dropdowns, etc.
+			// === PART 4: Reset lock icons for any other button ending in 'lockbtn' ===
+			const allLockButtons = document.querySelectorAll("[id$='lockbtn']");
+			allLockButtons.forEach(button => {
+				button.innerHTML = '<i class="fa-solid fa-lock-open"></i>';
+			});
 		}
 	});
 	</script>
 
- 
- 
- 
- 
-	<style>
-    #idealbtn, #idealtxt {
-        height: 38px; /* Match Bootstrap input height */
-    }
-	</style>
- 
- 
+
+
   </body>
 </html>
